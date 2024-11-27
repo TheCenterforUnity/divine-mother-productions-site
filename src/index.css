@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer utilities {
+  .path-glow {
+    filter: drop-shadow(0 0 2px #c4a000);
+  }
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes rise {
+  0% {
+    transform: translateY(20%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-120%) translateX(-50%);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise 12s linear infinite;
+}
+
+.animate-sway {
+  animation: sway 20s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-out forwards;
+}
+
+.animate-rotate-slow {
+  animation: spin 30s linear infinite;
+}
