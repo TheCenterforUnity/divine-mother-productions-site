@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import heroImage from '../assets/images/hero.jpg';
+import heroImage from '../assets/images/hero.png';
 
 export const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);

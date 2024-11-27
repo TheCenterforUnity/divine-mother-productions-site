@@ -1,13 +1,13 @@
-import sarahJones from '../../assets/images/cast/modern/sarah-jones.jpg';
-import amiraHassan from '../../assets/images/cast/modern/amira-hassan.jpg';
-import drLaporte from '../../assets/images/cast/modern/dr-laporte.jpg';
-import jodyMathews from '../../assets/images/cast/modern/jody-mathews.jpg';
-import maryMagdalene from '../../assets/images/cast/historical/mary-magdalene.jpg';
+import sarahJones from '../../assets/images/cast/modern/sarah-jones.png';
+import amiraHassan from '../../assets/images/cast/modern/amira-hassan.png';
+import drLaporte from '../../assets/images/cast/modern/dr-laporte.png';
+import jodyMathews from '../../assets/images/cast/modern/jody-mathews.png';
+import maryMagdalene from '../../assets/images/cast/historical/mary-magdalene.png';
 import martha from '../../assets/images/cast/historical/martha.jpg';
 import rebecca from '../../assets/images/cast/historical/rebecca.jpg';
-import susanna from '../../assets/images/cast/historical/susanna.jpg';
-import simonPeter from '../../assets/images/cast/historical/simon-peter.jpg';
-import jesus from '../../assets/images/cast/historical/jesus.jpg';
+import susanna from '../../assets/images/cast/historical/susanna.png';
+import simonPeter from '../../assets/images/cast/historical/simon-peter.png';
+import jesus from '../../assets/images/cast/historical/jesus.png';
 
 export interface Character {
   id: string;

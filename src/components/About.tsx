@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from './hooks/useInView';
-import sarahProfile from '../assets/images/sarah-profile.jpg';
+import sarahProfile from '../assets/images/sarah-profile.png';
 
 export const About = () => {
   const { ref, isVisible } = useInView({ threshold: 0.2 });
