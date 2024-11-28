@@ -37,7 +37,7 @@ export const EpisodeModal: React.FC<EpisodeModalProps> = ({ episode, isOpen, onC
 
       {/* Modal */}
       <div 
-        className="relative w-full max-w-3xl bg-[#1e2235] border border-[#c4a000]/20 rounded-lg shadow-2xl overflow-hidden transform transition-all duration-300 scale-100 opacity-100"
+        className="relative w-full max-w-3xl bg-[#1e2235] border border-[#c4a000]/20 rounded-lg shadow-2xl overflow-y-auto max-h-[calc(100vh-2rem)] transform transition-all duration-300 scale-100 opacity-100"
         onClick={e => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -46,10 +46,10 @@ export const EpisodeModal: React.FC<EpisodeModalProps> = ({ episode, isOpen, onC
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors duration-200"
+          className="absolute top-4 right-4 text-white hover:text-white/90 transition-colors duration-200 z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]"
           aria-label="Close modal"
         >
-          <X className="w-6 h-6" />
+          <X className="w-6 h-6 stroke-2 [filter:drop-shadow(1px_1px_0_rgb(0_0_0))_drop-shadow(-1px_-1px_0_rgb(0_0_0))]" />
         </button>
 
         {/* Content */}

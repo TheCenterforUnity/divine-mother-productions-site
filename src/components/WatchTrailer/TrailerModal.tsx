@@ -33,20 +33,20 @@ export const TrailerModal: React.FC<TrailerModalProps> = ({ isOpen, onClose }) =
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#1a1a2e]/98 backdrop-blur-sm" />
 
+      {/* Close Button - Outside Modal */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-[60] p-2 bg-[#1a1a2e] border border-[#c4a000]/20 rounded-full text-white hover:text-[#c4a000] transition-colors duration-200 shadow-lg"
+        aria-label="Close modal"
+      >
+        <X className="w-8 h-8" />
+      </button>
+
       {/* Modal */}
       <div 
         className="relative w-full max-w-5xl aspect-video bg-black rounded-lg shadow-2xl overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition-colors duration-200"
-          aria-label="Close modal"
-        >
-          <X className="w-6 h-6" />
-        </button>
-
         {/* YouTube Player */}
         <div className="absolute inset-0">
           <iframe
