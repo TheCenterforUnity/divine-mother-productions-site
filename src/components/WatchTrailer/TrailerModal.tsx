@@ -50,7 +50,7 @@ export const TrailerModal: React.FC<TrailerModalProps> = ({ isOpen, onClose }) =
         {/* YouTube Player */}
         <div className="absolute inset-0">
           <iframe
-            src="https://www.youtube.com/embed/vqK58c4gUyo?autoplay=1&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/2VKh08BbehM?autoplay=1&rel=0&modestbranding=1"
             title="The Divine Within - Official Trailer"
             className="w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
