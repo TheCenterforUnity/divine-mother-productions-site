@@ -52,11 +52,13 @@ export const Episodes = () => {
         </div>
       </div>
 
-      <EpisodeModal
-        episode={selectedEpisode!}
-        isOpen={!!selectedEpisode}
-        onClose={() => setSelectedEpisode(null)}
-      />
+      {selectedEpisode && (
+        <EpisodeModal
+          episode={selectedEpisode}
+          isOpen={true}
+          onClose={() => setSelectedEpisode(null)}
+        />
+      )}
     </section>
   );
 };
