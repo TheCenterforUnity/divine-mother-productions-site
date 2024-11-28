@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Mail } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 import heroImage from '../assets/images/hero.png';
 
@@ -117,6 +118,17 @@ export const ComingSoon = () => {
               A groundbreaking series exploring the untold story of women's spiritual leadership 
               across time and tradition.
             </p>
+          </div>
+
+          {/* Contact Email */}
+          <div className="pt-8 border-t border-white/10">
+            <a 
+              href="mailto:contact@divinemotherproductions.com"
+              className="inline-flex items-center space-x-2 text-white/80 hover:text-[#c4a000] transition-colors duration-300 font-sans font-light"
+            >
+              <Mail className="w-4 h-4" />
+              <span className="text-sm">contact@divinemotherproductions.com</span>
+            </a>
           </div>
         </div>
       </div>
