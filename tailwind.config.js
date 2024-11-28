@@ -9,8 +9,8 @@ export default {
         accent: '#c4a000',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Cinzel', 'serif'],
+        'serif': ['Cinzel', 'serif'],
+        'sans': ['Montserrat', 'sans-serif'],
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',

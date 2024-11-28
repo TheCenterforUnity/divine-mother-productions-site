@@ -68,7 +68,7 @@ export const CastModal: React.FC<CastModalProps> = ({ character, isOpen, onClose
             <div className="space-y-6">
               {/* Character Info */}
               <div>
-                <p className="text-[#c4a000] text-sm tracking-wider">
+                <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase">
                   {character.timeline.toUpperCase()} TIMELINE
                 </p>
                 <h2 
@@ -77,21 +77,23 @@ export const CastModal: React.FC<CastModalProps> = ({ character, isOpen, onClose
                 >
                   {character.name}
                 </h2>
-                <p className="text-white/80 mt-2">{character.briefRole}</p>
+                <p className="font-sans font-light text-white/80 mt-2">
+                  {character.briefRole}
+                </p>
               </div>
 
               {/* AI Synthesis Note */}
               <div className="py-4 border-y border-white/10">
-                <p className="text-[#c4a000] text-sm tracking-wider mb-2">
+                <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase mb-2">
                   AI PERFORMANCE SYNTHESIS
                 </p>
-                <p className="text-white/60 text-sm">
+                <p className="font-sans font-light text-white/60 text-sm">
                   Character visualization and performance created through advanced AI synthesis
                 </p>
               </div>
 
               {/* Full Description */}
-              <div className="space-y-4">
+              <div className="space-y-4 font-sans font-light">
                 {character.fullDescription.map((paragraph, index) => (
                   <p key={index} className="text-white/80 text-sm leading-relaxed">
                     {paragraph}
@@ -102,8 +104,10 @@ export const CastModal: React.FC<CastModalProps> = ({ character, isOpen, onClose
               {/* Relationships */}
               {character.relationships.length > 0 && (
                 <div className="pt-4">
-                  <h3 className="text-white text-sm font-semibold mb-2">KEY RELATIONSHIPS</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-sans text-white text-sm tracking-[0.2em] uppercase mb-2">
+                    Key Relationships
+                  </h3>
+                  <ul className="space-y-2 font-sans font-light">
                     {character.relationships.map((relationship, index) => (
                       <li key={index} className="text-white/60 text-sm">
                         {relationship}

@@ -40,7 +40,7 @@ export const Cast = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-white tracking-wider">
               CAST | AI PERFORMANCE CAPTURE
             </h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+            <p className="font-sans font-light text-white/80 text-sm max-w-2xl mx-auto">
               Next-generation AI synthesis bringing timeless stories to life
             </p>
           </div>
@@ -85,7 +85,7 @@ export const Cast = () => {
 
           {/* Footer Note */}
           <div className="text-center">
-            <p className="text-white/60 text-sm max-w-2xl mx-auto">
+            <p className="font-sans text-white/60 text-sm max-w-2xl mx-auto">
               All performances created through advanced AI synthesis, enabling unprecedented historical authenticity while delivering powerful dramatic moments.
             </p>
           </div>

@@ -25,7 +25,7 @@ export const Footer = () => {
             <div>
               <a 
                 href="mailto:contact@divinemotherproductions.com"
-                className="inline-flex items-center space-x-2 text-white/80 hover:text-[#c4a000] transition-colors duration-300"
+                className="inline-flex items-center space-x-2 text-white/80 hover:text-[#c4a000] transition-colors duration-300 font-sans font-light"
               >
                 <Mail className="w-4 h-4" />
                 <span>contact@divinemotherproductions.com</span>
@@ -34,19 +34,19 @@ export const Footer = () => {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4 text-right">
+          <div className="space-y-4 text-right font-sans">
             {/* Copyright */}
             <div className="space-y-2">
-              <p className="text-white/80 text-sm">
+              <p className="text-white/80 text-sm font-light">
                 © 2024 Divine Mother Productions. All Rights Reserved.
               </p>
-              <p className="text-white/60 text-sm">
+              <p className="text-white/60 text-sm font-light">
                 "The Divine Within" is a registered trademark of Divine Mother Productions.
               </p>
             </div>
 
             {/* AI Note */}
-            <p className="text-white/40 text-xs">
+            <p className="text-white/40 text-xs font-light">
               Created with advanced AI synthesis technology
             </p>
           </div>

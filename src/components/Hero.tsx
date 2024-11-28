@@ -35,16 +35,16 @@ export const Hero = () => {
       {/* Content */}
       <div className={`relative h-full flex flex-col items-center justify-center text-center px-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <div className="space-y-6">
-          <p className="text-[#c4a000] text-sm tracking-[0.3em] font-light mb-4">
+          <p className="text-[#c4a000] text-sm tracking-[0.3em] font-sans font-light mb-4">
             A DIVINE MOTHER PRODUCTIONS SERIES
           </p>
-          <h1 className="font-serif text-5xl md:text-7xl text-white tracking-wider font-light">
+          <h1 className="font-serif text-5xl md:text-7xl text-white tracking-wider">
             THE DIVINE WITHIN
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 font-light tracking-wide">
+          <p className="font-sans text-xl md:text-2xl text-white/90 font-light tracking-wide">
             A Premium Streaming Series
           </p>
-          <p className="text-lg text-white/80 max-w-xl mx-auto font-light">
+          <p className="font-sans text-lg text-white/80 max-w-xl mx-auto font-light">
             Where ancient truth meets modern revelation
           </p>
         </div>

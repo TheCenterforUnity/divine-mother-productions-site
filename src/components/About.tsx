@@ -25,13 +25,13 @@ export const About = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-8 tracking-wider">
               ABOUT THE SERIES
             </h2>
-            <div className="space-y-6 text-white/90">
-              <p className="leading-relaxed">
+            <div className="space-y-6 text-white/90 font-sans font-light">
+              <p className="leading-relaxed text-sm">
                 THE DIVINE WITHIN weaves between ancient Judea and the modern world, 
                 exploring how recognizing our innate spiritual equality transforms 
                 individuals and societies.
               </p>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-sm">
                 When brilliant religious historian Dr. Sarah Jones uncovers evidence 
                 of history's first women apostles, her journey mysteriously begins 
                 to mirror that of those who, two thousand years earlier, moved from 
@@ -54,8 +54,12 @@ export const About = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c2543]/50 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-[#c4a000] text-sm tracking-wider font-light">DR. SARAH JONES</p>
-                <p className="text-white/80 text-sm mt-1">Religious Historian</p>
+                <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase">
+                  DR. SARAH JONES
+                </p>
+                <p className="text-white/80 text-sm mt-1 font-sans font-light">
+                  Religious Historian
+                </p>
               </div>
             </div>
           </div>

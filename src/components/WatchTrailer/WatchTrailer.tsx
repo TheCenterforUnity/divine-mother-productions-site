@@ -63,26 +63,26 @@ export const WatchTrailer = () => {
                 <h3 className="font-serif text-3xl md:text-4xl text-white text-center mb-2">
                   THE DIVINE WITHIN
                 </h3>
-                <p className="text-[#c4a000] text-sm tracking-[0.3em] mb-4">
+                <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase mb-4">
                   SEASON ONE: EQUAL
                 </p>
-                <p className="text-white/80 text-sm">
+                <p className="font-sans font-light text-white/80 text-sm">
                   A Divine Mother Productions Series
                 </p>
               </div>
 
               {/* Duration Badge */}
               <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#1a1a2e]/70 backdrop-blur-sm border border-[#c4a000]/20">
-                <span className="text-white/90 text-sm">1:56</span>
+                <span className="font-sans font-light text-white/90 text-sm">1:56</span>
               </div>
             </div>
 
             {/* Footer Text */}
             <div className="text-center mt-8 space-y-2">
-              <p className="text-white/90 text-lg">
+              <p className="font-sans font-light text-white/90 text-sm">
                 Experience the revolutionary story of history's first women apostles
               </p>
-              <p className="text-[#c4a000] text-sm tracking-wider">
+              <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase">
                 Where ancient truth meets modern revelation
               </p>
             </div>

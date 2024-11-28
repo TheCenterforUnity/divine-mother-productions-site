@@ -36,13 +36,13 @@ export const CastCard: React.FC<CastCardProps> = ({ character, onClick }) => {
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
         <div className="space-y-2">
-          <p className="text-[#c4a000] text-sm tracking-[0.2em] font-light">
+          <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light">
             AI PERFORMANCE SYNTHESIS
           </p>
           <h3 className="font-serif text-xl text-white">
             {character.name}
           </h3>
-          <p className="text-white/80 text-sm line-clamp-2 transform opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+          <p className="font-sans text-white/80 text-sm line-clamp-2 transform opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
             {character.briefRole}
           </p>
         </div>

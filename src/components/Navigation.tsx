@@ -37,7 +37,7 @@ const Navigation = () => {
                 alt="Divine Mother Productions" 
                 className="h-10 w-auto"
               />
-              <span className="hidden sm:inline-block text-white/80 group-hover:text-[#c4a000] transition-colors duration-300">
+              <span className="hidden sm:inline-block text-white/80 group-hover:text-[#c4a000] transition-colors duration-300 font-serif">
                 Divine Mother Productions
               </span>
             </button>
@@ -50,7 +50,7 @@ const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-white/80 hover:text-[#c4a000] transition-colors duration-300 text-sm tracking-wider uppercase"
+                className="text-white/80 hover:text-[#c4a000] transition-colors duration-300 text-sm tracking-[0.2em] uppercase font-sans font-light"
               >
                 {link.label}
               </a>

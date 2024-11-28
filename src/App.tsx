@@ -1,25 +1,27 @@
 import React from 'react';
-import { Hero } from './components/Hero';
-import Navigation from './components/Navigation';
-import { About } from './components/About';
-import { Episodes } from './components/Episodes/Episodes';
-import { Cast } from './components/Cast/Cast';
-import { WatchTrailer } from './components/WatchTrailer/WatchTrailer';
-import { Footer } from './components/Footer';
-import { BackToTop } from './components/BackToTop';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { ComingSoon } from './components/ComingSoon';
+import { MainLayout } from './components/MainLayout';
 
 function App() {
   return (
-    <div>
-      <Navigation />
-      <Hero />
-      <About />
-      <Episodes />
-      <Cast />
-      <WatchTrailer />
-      <Footer />
-      <BackToTop />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<ComingSoon />} 
+        />
+        <Route 
+          path="/hidden" 
+          element={<MainLayout />} 
+        />
+        {/* Catch all other routes and redirect to home */}
+        <Route 
+          path="*" 
+          element={<Navigate to="/" replace />} 
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

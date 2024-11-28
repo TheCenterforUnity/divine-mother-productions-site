@@ -56,7 +56,9 @@ export const EpisodeModal: React.FC<EpisodeModalProps> = ({ episode, isOpen, onC
         <div className="p-8">
           <div className="space-y-4">
             <div className="space-y-2">
-              <p className="text-[#c4a000] text-sm tracking-wider">EPISODE {episode.number}</p>
+              <p className="text-[#c4a000] text-sm tracking-[0.2em] font-sans font-light uppercase">
+                EPISODE {episode.number}
+              </p>
               <h2 
                 id={`episode-${episode.number}-title`}
                 className="font-serif text-3xl text-white"
@@ -65,29 +67,33 @@ export const EpisodeModal: React.FC<EpisodeModalProps> = ({ episode, isOpen, onC
               </h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 text-sm text-white/60 border-y border-white/10 py-4 my-6">
+            <div className="grid grid-cols-3 gap-4 text-sm text-white/60 border-y border-white/10 py-4 my-6 font-sans font-light">
               <div>
-                <p className="text-white/40">Runtime</p>
+                <p className="text-white/40 tracking-[0.2em] uppercase text-xs">Runtime</p>
                 <p>60 minutes</p>
               </div>
               <div>
-                <p className="text-white/40">Director</p>
+                <p className="text-white/40 tracking-[0.2em] uppercase text-xs">Director</p>
                 <p>Sarah Mitchell</p>
               </div>
               <div>
-                <p className="text-white/40">Writer</p>
+                <p className="text-white/40 tracking-[0.2em] uppercase text-xs">Writer</p>
                 <p>Emma Thompson</p>
               </div>
             </div>
 
-            <div className="space-y-4 text-white/80 leading-relaxed">
+            <div className="space-y-4 text-white/80 leading-relaxed font-sans font-light">
               {episode.fullSynopsis.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} className="text-sm">
+                  {paragraph}
+                </p>
               ))}
             </div>
 
             <div className="mt-8 pt-4 border-t border-white/10">
-              <p className="text-[#c4a000] tracking-wider">COMING SOON</p>
+              <p className="text-[#c4a000] tracking-[0.2em] font-sans font-light uppercase">
+                COMING SOON
+              </p>
             </div>
           </div>
         </div>

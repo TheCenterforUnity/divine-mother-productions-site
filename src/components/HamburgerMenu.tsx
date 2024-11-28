@@ -41,7 +41,7 @@ const HamburgerMenu = ({ links }: HamburgerMenuProps) => {
             <a
               key={link.href}
               href={link.href}
-              className="block px-4 py-2 text-white/80 hover:text-[#c4a000] hover:bg-[#1a1a2e]/50 transition-colors duration-300 uppercase text-sm tracking-wider"
+              className="block px-4 py-2 text-white/80 hover:text-[#c4a000] hover:bg-[#1a1a2e]/50 transition-colors duration-300 uppercase text-sm tracking-[0.2em] font-sans font-light"
               onClick={(e) => scrollToSection(e, link.href)}
             >
               {link.label}
