@@ -19,7 +19,7 @@ export const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode, onClick }) =>
       <div className="relative space-y-3">
         <span className="text-[#c4a000] text-sm tracking-wider">EPISODE {episode.number}</span>
         <h3 className="font-serif text-xl text-white">{episode.title}</h3>
-        <p className="text-white/80 text-sm line-clamp-2">{episode.description}</p>
+        <p className="text-white/80 text-sm">{episode.description}</p>
         <div className="pt-4 flex justify-between items-center text-xs text-white/60">
           <span>60 minutes</span>
           <span className="tracking-wider">COMING SOON</span>
