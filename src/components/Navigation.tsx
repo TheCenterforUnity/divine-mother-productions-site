@@ -7,6 +7,7 @@ const Navigation = () => {
     { label: 'About', href: '#about' },
     { label: 'Episodes', href: '#episodes' },
     { label: 'Cast', href: '#cast' },
+    { label: 'Seasons', href: '#seasons' },
     { label: 'Watch Now', href: '#watch-now' }
   ];
 

@@ -7,6 +7,7 @@ import { Cast } from './Cast/Cast';
 import { WatchTrailer } from './WatchTrailer/WatchTrailer';
 import { Footer } from './Footer';
 import { BackToTop } from './BackToTop';
+import { Seasons } from './Seasons/Seasons';
 
 export const MainLayout = () => {
   return (
@@ -16,6 +17,7 @@ export const MainLayout = () => {
       <About />
       <Episodes />
       <Cast />
+      <Seasons />
       <WatchTrailer />
       <Footer />
       <BackToTop />
