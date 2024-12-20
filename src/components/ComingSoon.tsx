@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Mail } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 import heroImage from '../assets/images/hero.png';
+import { TrailerModal } from './WatchTrailer/TrailerModal';
+import { Play } from 'lucide-react';
+import trailerPreview from '../assets/images/trailer-preview.jpg';
 
 export const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +13,7 @@ export const ComingSoon = () => {
     minutes: 0,
     seconds: 0
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date('2024-12-21T20:30:00+02:00'); // Israel time (UTC+2)
@@ -35,6 +39,8 @@ export const ComingSoon = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const hasTimeLeft = timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-sans">
@@ -82,33 +88,68 @@ export const ComingSoon = () => {
         </div>
 
         <div className="space-y-8">
-          <div className="space-y-3">
-            <p className="text-[#c4a000] text-sm tracking-[0.3em] uppercase font-light">
-              Season One Trailer Launching
-            </p>
-            <p className="text-white text-lg tracking-wider font-light">
-              December 21st, 2024
-            </p>
-          </div>
+          {hasTimeLeft ? (
+            <>
+              <div className="space-y-3">
+                <p className="text-[#c4a000] text-sm tracking-[0.3em] uppercase font-light">
+                  Season One Trailer Launching
+                </p>
+                <p className="text-white text-lg tracking-wider font-light">
+                  December 21st, 2024
+                </p>
+              </div>
 
-          {/* Countdown Timer */}
-          {(timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0) && (
-            <div className="grid grid-cols-4 gap-6 max-w-sm mx-auto">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.days}</div>
-                <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Days</div>
+              {/* Countdown Timer */}
+              <div className="grid grid-cols-4 gap-6 max-w-sm mx-auto">
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.days}</div>
+                  <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Days</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.hours}</div>
+                  <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Hours</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.minutes}</div>
+                  <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Minutes</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.seconds}</div>
+                  <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Seconds</div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.hours}</div>
-                <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Hours</div>
+            </>
+          ) : (
+            /* Trailer Section - Shows when countdown reaches zero */
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <p className="text-[#c4a000] text-sm tracking-[0.3em] uppercase font-light">
+                  Watch the Official Trailer
+                </p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.minutes}</div>
-                <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Minutes</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif text-white">{timeLeft.seconds}</div>
-                <div className="text-xs text-white/60 uppercase tracking-[0.2em] font-light">Seconds</div>
+              
+              {/* Trailer Preview */}
+              <div className="relative aspect-video overflow-hidden rounded-lg group">
+                <img
+                  src={trailerPreview}
+                  alt="The Divine Within - Trailer"
+                  className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/50 to-transparent opacity-60" />
+
+                {/* Play Button */}
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="absolute inset-0 flex items-center justify-center group/button"
+                  aria-label="Play trailer"
+                >
+                  <div className="relative w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#c4a000] bg-[#1a1a2e]/50 backdrop-blur-sm transform group-hover/button:scale-95 transition-all duration-300">
+                    <div className="absolute inset-0 bg-[#c4a000]/20 rounded-full animate-ping" />
+                    <Play className="w-8 h-8 text-[#c4a000] transform translate-x-0.5" />
+                  </div>
+                </button>
               </div>
             </div>
           )}
@@ -132,6 +173,12 @@ export const ComingSoon = () => {
           </div>
         </div>
       </div>
+
+      {/* Trailer Modal */}
+      <TrailerModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }; 
