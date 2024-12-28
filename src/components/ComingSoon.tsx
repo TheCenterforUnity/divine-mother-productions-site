@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Mail } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Mail, Play, X } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 import heroImage from '../assets/images/hero.png';
 import { TrailerModal } from './WatchTrailer/TrailerModal';
-import { Play } from 'lucide-react';
 import trailerPreview from '../assets/images/trailer-preview.jpg';
+import { DonateButton } from './DonateButton';
 
 export const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -14,6 +14,7 @@ export const ComingSoon = () => {
     seconds: 0
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showDonateModal, setShowDonateModal] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date('2024-12-21T20:30:00+02:00'); // Israel time (UTC+2)
@@ -38,6 +39,16 @@ export const ComingSoon = () => {
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  const openDonateForm = useCallback(() => {
+    setShowDonateModal(true);
+    document.body.style.overflow = 'hidden';
+  }, []);
+
+  const closeDonateForm = useCallback(() => {
+    setShowDonateModal(false);
+    document.body.style.overflow = 'unset';
   }, []);
 
   const hasTimeLeft = timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0;
@@ -151,6 +162,11 @@ export const ComingSoon = () => {
                   </div>
                 </button>
               </div>
+
+              {/* Donate Button */}
+              <div className="mt-8 flex justify-center">
+                <DonateButton onClick={openDonateForm} />
+              </div>
             </div>
           )}
 
@@ -173,6 +189,35 @@ export const ComingSoon = () => {
           </div>
         </div>
       </div>
+
+      {/* Custom Donation Modal */}
+      {showDonateModal && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-hidden"
+          onClick={closeDonateForm}
+        >
+          <div 
+            className="absolute inset-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[500px] h-full md:h-[90vh] md:max-h-[800px] bg-white md:rounded-xl shadow-2xl overflow-hidden"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeDonateForm}
+              className="absolute right-2 top-2 z-10 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-500 hover:text-gray-700 transition-colors"
+              aria-label="Close donation form"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Donation Form */}
+            <iframe
+              src="https://centerforunitydbaworldwideministryofjesusinc-bloom.kindful.com/embeds/be5a5c1a-3eb5-47de-b90e-34e7aa4b474f"
+              title="Donation Form"
+              className="w-full h-full border-0"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Trailer Modal */}
       <TrailerModal
