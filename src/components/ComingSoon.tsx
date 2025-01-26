@@ -14,7 +14,6 @@ export const ComingSoon = () => {
     seconds: 0
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showDonateModal, setShowDonateModal] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date('2024-12-21T20:30:00+02:00'); // Israel time (UTC+2)
@@ -42,13 +41,7 @@ export const ComingSoon = () => {
   }, []);
 
   const openDonateForm = useCallback(() => {
-    setShowDonateModal(true);
-    document.body.style.overflow = 'hidden';
-  }, []);
-
-  const closeDonateForm = useCallback(() => {
-    setShowDonateModal(false);
-    document.body.style.overflow = 'unset';
+    window.open('https://centerforunitydbaworldwideministryofjesusinc-bloom.kindful.com/embeds/be5a5c1a-3eb5-47de-b90e-34e7aa4b474f', '_blank');
   }, []);
 
   const hasTimeLeft = timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0;
@@ -133,12 +126,6 @@ export const ComingSoon = () => {
           ) : (
             /* Trailer Section - Shows when countdown reaches zero */
             <div className="space-y-8">
-              <div className="space-y-3">
-                <p className="text-[#c4a000] text-sm tracking-[0.3em] uppercase font-light">
-                  Watch the Official Trailer
-                </p>
-              </div>
-              
               {/* Trailer Preview */}
               <div className="relative aspect-video overflow-hidden rounded-lg group">
                 <img
@@ -148,7 +135,7 @@ export const ComingSoon = () => {
                 />
                 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/50 to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/50 to-transparent" />
 
                 {/* Play Button */}
                 <button
@@ -189,35 +176,6 @@ export const ComingSoon = () => {
           </div>
         </div>
       </div>
-
-      {/* Custom Donation Modal */}
-      {showDonateModal && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-hidden"
-          onClick={closeDonateForm}
-        >
-          <div 
-            className="absolute inset-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[500px] h-full md:h-[90vh] md:max-h-[800px] bg-white md:rounded-xl shadow-2xl overflow-hidden"
-            onClick={e => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={closeDonateForm}
-              className="absolute right-2 top-2 z-10 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-500 hover:text-gray-700 transition-colors"
-              aria-label="Close donation form"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Donation Form */}
-            <iframe
-              src="https://centerforunitydbaworldwideministryofjesusinc-bloom.kindful.com/embeds/be5a5c1a-3eb5-47de-b90e-34e7aa4b474f"
-              title="Donation Form"
-              className="w-full h-full border-0"
-            />
-          </div>
-        </div>
-      )}
 
       {/* Trailer Modal */}
       <TrailerModal
